@@ -4,12 +4,18 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: './web/src/js/app.js',
-
     output: {
         path: './web/build',
         filename: 'app.bundle.js'
     },
     module: {
+        preLoaders: [
+            {
+                test: /\.js$/,
+                loader: 'eslint',
+                exclude: /node_modules/
+            }
+        ],
         loaders: [
             {
                 test: /\.js$/,
@@ -36,5 +42,9 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin()
-    ]
+    ],
+    eslint: {
+        failOnWarning: false,
+        failOnError: true
+    }
 };
