@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var autoprefixer = require('autoprefixer');
+var precss       = require('precss');
 
 module.exports = {
     entry: './web/src/js/app.js',
@@ -8,6 +10,7 @@ module.exports = {
         path: './web/build',
         filename: 'app.bundle.js'
     },
+    devtool: 'source-map',
     module: {
         preLoaders: [
             {
@@ -27,7 +30,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract( 'style', 'css', 'sass')
+                loader: ExtractTextPlugin.extract('style', 'css!postcss', 'sass')
             }
         ]
     },
@@ -46,5 +49,8 @@ module.exports = {
     eslint: {
         failOnWarning: false,
         failOnError: true
+    },
+    postcss: function () {
+        return [precss, autoprefixer];
     }
 };

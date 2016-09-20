@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/victorCas/build#readme",
   "devDependencies": {
+    "autoprefixer": "^6.4.1",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.14.0",
@@ -30,6 +31,8 @@
     "eslint-plugin-react": "^6.3.0",
     "html-webpack-plugin": "^2.22.0",
     "node-sass": "^3.10.0",
+    "postcss-loader": "^0.13.0",
+    "precss": "^1.4.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
