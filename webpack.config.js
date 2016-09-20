@@ -20,9 +20,10 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-            }]
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract( 'style', 'css', 'sass')
+            }
+        ]
     },
     plugins: [
         new ExtractTextPlugin("[name].css"),

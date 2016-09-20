@@ -1,5 +1,5 @@
 import 'babel-polyfill';
 
-require('../styles/app.css');
+require('../styles/app.scss');
 
 console.log('app');
