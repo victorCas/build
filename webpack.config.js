@@ -1,11 +1,12 @@
 const webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var autoprefixer = require('autoprefixer');
-var precss       = require('precss');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const autoprefixer = require('autoprefixer');
+const precss       = require('precss');
 
 module.exports = {
-    entry: './web/src/js/app.js',
+    entry: './web/src/js/app.jsx',
     output: {
         path: './web/build',
         filename: 'app.bundle.js'
@@ -21,17 +22,19 @@ module.exports = {
         ],
         loaders: [
             {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015']
-                }
-            },
-            {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract('style', 'css!csslint!postcss!sass')
+            },
+            {
+                test : /\.jsx?/,
+                exclude: /node_modules/,
+                loader : 'babel'
             }
+        ]
+    },
+    resolve: {
+        root: [
+            path.resolve('./web/src')
         ]
     },
     plugins: [
@@ -44,7 +47,9 @@ module.exports = {
                 comments: false
             }
         }),
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            template: 'web/src/index.html'
+        })
     ],
     eslint: {
         failOnWarning: false,
