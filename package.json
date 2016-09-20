@@ -38,9 +38,13 @@
     "webpack": "^1.13.2"
   },
   "dependencies": {
+    "assemble": "^0.3.83",
     "babel-polyfill": "^6.13.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "grunt": "^0.4.5",
+    "js": "^0.1.0",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "styles": "^0.2.1"
   }
 }

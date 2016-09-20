@@ -1,6 +1,7 @@
 {
   "extends": "airbnb",
   "rules": {
-    "react/require-extension": "off"
+    "react/require-extension": "off",
+    "import/no-unresolved": 0
   }
 }
