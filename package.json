@@ -1,0 +1,22 @@
+{
+  "name": "buildchain",
+  "version": "1.0.0",
+  "description": "Testing out chains",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorCas/build.git"
+  },
+  "author": "Victor Jansson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorCas/build/issues"
+  },
+  "homepage": "https://github.com/victorCas/build#readme",
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  }
+}
